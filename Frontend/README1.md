@@ -1,0 +1,1 @@
+Truce-Wallet landing page
