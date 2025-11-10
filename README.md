@@ -114,6 +114,8 @@ AI Analysis Engine
          ↓
 Price Feeds + Database (MongoDB)
 ```
+## Image Architecture Preview:
+https://www.canva.com/design/DAG4QD4NUwc/yDnfS71q_BzoWUYoXrbEtA/edit?utm_content=DAG4QD4NUwc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 Our architecture is designed for speed, security, and scalability. Every component is modular, making it easy to add new chains and features as we grow.
 
