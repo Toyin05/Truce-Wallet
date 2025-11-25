@@ -21,7 +21,7 @@ Store your crypto, swap tokens, stake for rewards, and get intelligent recommend
 
 Think of it as your crypto command center: wallet, exchange, and financial advisor rolled into one.
 
-**🚀 Fully Implemented Frontend** | **🔗 [View on GitHub](https://github.com/Toyin05/Truce-Wallet)**
+**🚀 Fully Implemented Frontend** | **🔗 [View on GitHub](https://github.com/Toyin05/Truce-Wallet)** | **📄 [Smart Contracts](https://drive.google.com/file/d/1MzzMfox_JqZM-Pu4QeuJMsjix1qtRT-k/view?usp=drive_link)**
 
 ---
 
@@ -315,6 +315,7 @@ Truce Wallet is positioned at the intersection of all four trends.
 
 **GitHub Repository**: [https://github.com/Toyin05/Truce-Wallet](https://github.com/Toyin05/Truce-Wallet)  
 **Frontend Directory**: `/Frontend`  
+**Smart Contracts**: [View on Google Drive](https://drive.google.com/file/d/1MzzMfox_JqZM-Pu4QeuJMsjix1qtRT-k/view?usp=drive_link)  
 **Architecture Overview**: [View on Canva](https://www.canva.com/design/DAG4QD4NUwc/yDnfS71q_BzoWUYoXrbEtA/edit?utm_content=DAG4QD4NUwc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 ---
