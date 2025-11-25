@@ -21,7 +21,7 @@ Store your crypto, swap tokens, stake for rewards, and get intelligent recommend
 
 Think of it as your crypto command center: wallet, exchange, and financial advisor rolled into one.
 
-**🚀 Fully Implemented Frontend** | **🔗 [View on GitHub](https://github.com/Toyin05/Truce-Wallet)** | **📄 [Smart Contracts](https://drive.google.com/file/d/1MzzMfox_JqZM-Pu4QeuJMsjix1qtRT-k/view?usp=drive_link)**
+**🚀 Fully Implemented Frontend** | **🔗 [View on GitHub](https://github.com/Toyin05/Truce-Wallet)** | **📄 [Smart Contracts](https://drive.google.com/file/d/1MzzMfox_JqZM-Pu4QeuJMsjix1qtRT-k/view?usp=drive_link)** | **🐦 [Follow us on X](https://x.com/TruceWallet?s=09)**
 
 ---
 
@@ -311,12 +311,22 @@ Truce Wallet is positioned at the intersection of all four trends.
 
 ---
 
+## Community & Social
+
+Stay connected with Truce Wallet and join our growing community:
+
+**🐦 X (Twitter)**: [@TruceWallet](https://x.com/TruceWallet?s=09)  
+Follow us for the latest updates, product announcements, development progress, and community discussions. We share insights on DeFi trends, security tips, and behind-the-scenes looks at building the future of crypto wallets.
+
+---
+
 ## Repository & Links
 
 **GitHub Repository**: [https://github.com/Toyin05/Truce-Wallet](https://github.com/Toyin05/Truce-Wallet)  
 **Frontend Directory**: `/Frontend`  
 **Smart Contracts**: [View on Google Drive](https://drive.google.com/file/d/1MzzMfox_JqZM-Pu4QeuJMsjix1qtRT-k/view?usp=drive_link)  
-**Architecture Overview**: [View on Canva](https://www.canva.com/design/DAG4QD4NUwc/yDnfS71q_BzoWUYoXrbEtA/edit?utm_content=DAG4QD4NUwc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+**Architecture Overview**: [View on Canva](https://www.canva.com/design/DAG4QD4NUwc/yDnfS71q_BzoWUYoXrbEtA/edit?utm_content=DAG4QD4NUwc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)  
+**X (Twitter)**: [@TruceWallet](https://x.com/TruceWallet?s=09)
 
 ---
 
@@ -336,6 +346,7 @@ Truce Wallet makes crypto accessible, intelligent, and secure. That's how we onb
 Have questions? Want to collaborate? Let's talk.
 
 **GitHub**: [@Toyin05](https://github.com/Toyin05)  
+**X (Twitter)**: [@TruceWallet](https://x.com/TruceWallet?s=09)  
 **Project**: Truce Wallet on BlockDAG  
 **Buildathon**: BlockDAG Buildathon 2025
 
