@@ -21,7 +21,7 @@ Store your crypto, swap tokens, stake for rewards, and get intelligent recommend
 
 Think of it as your crypto command center: wallet, exchange, and financial advisor rolled into one.
 
-**🚀 Fully Implemented Frontend** | **🔗 [View on GitHub](https://github.com/Toyin05/Truce-Wallet)** | **📄 [Smart Contracts](https://drive.google.com/file/d/1MzzMfox_JqZM-Pu4QeuJMsjix1qtRT-k/view?usp=drive_link)** | **🐦 [Follow us on X](https://x.com/TruceWallet?s=09)**   | **🌐 [View Truce Wallet Live!](https://truce-wallet-yspy.vercel.app/))**
+**🚀 Fully Implemented Frontend** | **🔗 [View on GitHub](https://github.com/Toyin05/Truce-Wallet)** | **📄 [Smart Contracts](https://drive.google.com/file/d/1MzzMfox_JqZM-Pu4QeuJMsjix1qtRT-k/view?usp=drive_link)** | **🐦 [Follow us on X](https://x.com/TruceWallet?s=09)**   | **🌐 [View Truce Wallet Live!](https://truce-wallet-hfu2.vercel.app/)**
 
 ---
 
@@ -327,7 +327,7 @@ Follow us for the latest updates, product announcements, development progress, a
 **Smart Contracts**: [View on Google Drive](https://drive.google.com/file/d/1MzzMfox_JqZM-Pu4QeuJMsjix1qtRT-k/view?usp=drive_link)  
 **Architecture Overview**: [View on Canva](https://www.canva.com/design/DAG4QD4NUwc/yDnfS71q_BzoWUYoXrbEtA/edit?utm_content=DAG4QD4NUwc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)  
 **X (Twitter)**: [@TruceWallet](https://x.com/TruceWallet?s=09)  
-**Live Link**: [View on Vercel](https://truce-wallet-yspy.vercel.app/)
+**Live Link**: [View on Vercel](https://truce-wallet-hfu2.vercel.app/)
 
 ---
 
