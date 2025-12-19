@@ -71,11 +71,7 @@ Truce Wallet Frontend is a modern React application that provides a comprehensiv
 
 ```
 src/
-<<<<<<< HEAD
-├── components/              # Reusable UI components
-=======
 ├── components/              # Contains reusable UI components
->>>>>>> upstream/main
 │   ├── ui/                 # shadcn-ui components (40+ components)
 │   │   ├── button.tsx
 │   │   ├── card.tsx
@@ -141,15 +137,8 @@ src/
    ```env
    # Supabase Configuration
    VITE_SUPABASE_URL=your_supabase_project_url
-<<<<<<< HEAD
-   VITE_SUPABASE_PUBLISHABLE_KEY=your_supabase_publishable_key
-=======
    VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
->>>>>>> upstream/main
-   ```
-
 4. **Start development server**
-   ```bash
    npm run dev
    # or
    yarn dev
@@ -194,7 +183,7 @@ src/
 - **Learning Resources**: Educational content and tutorials
 - **Security Management**: User security settings
 
-<<<<<<< HEAD
+ HEAD
 ### 🎨 Modern UI/UX
 - **Component Library**: 40+ pre-built UI components
 - **Consistent Design**: Unified design system
@@ -203,7 +192,6 @@ src/
 - **Theme Support**: Dark/light mode capability
 
 =======
->>>>>>> upstream/main
 ## Configuration
 
 ### Supabase Setup
@@ -249,15 +237,11 @@ npm run build
 ### Environment Variables
 Ensure production environment variables are set:
 - `VITE_SUPABASE_URL`
-<<<<<<< HEAD
+ HEAD
 - `VITE_SUPABASE_PUBLISHABLE_KEY`
 =======
 - `VITE_SUPABASE_ANON_KEY`
->>>>>>> upstream/main
-
-## Browser Support
 - Chrome (latest)
-- Firefox (latest)
 - Safari (latest)
 - Edge (latest)
 

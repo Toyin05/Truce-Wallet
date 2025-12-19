@@ -445,12 +445,11 @@ export default function Profile() {
                   { action: 'Two-factor authentication', details: '2FA enabled via SMS', timestamp: '1 week ago', type: 'security' },
                   { action: 'Profile verification', details: 'Identity verified successfully', timestamp: '2 weeks ago', type: 'verification' }
                 ].map((activity, index) => (
-<<<<<<< HEAD
+ HEAD
                     <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center flex-shrink-0 ${
 =======
                   <div key={index} className="flex items-center gap-4 p-4 rounded-lg border border-border hover:bg-muted/30 transition-colors">
                     }`}>
-<<<<<<< HEAD
                       {activity.type === 'security' ? <Shield className="w-3 h-3 sm:w-4 sm:h-4 text-green-500" /> :
                        activity.type === 'verification' ? <CheckCircle2 className="w-3 h-3 sm:w-4 sm:h-4 text-purple-500" /> :
                        <User className="w-3 h-3 sm:w-4 sm:h-4 text-teal-500" />}
@@ -461,18 +460,6 @@ export default function Profile() {
                     </div>
                     <div className="text-left sm:text-right self-end sm:self-center">
                       <p className="text-xs sm:text-sm text-muted-foreground">{activity.timestamp}</p>
-=======
-                      {activity.type === 'security' ? <Shield className="w-4 h-4 text-green-500" /> :
-                       activity.type === 'verification' ? <CheckCircle2 className="w-4 h-4 text-purple-500" /> :
-                       <User className="w-4 h-4 text-teal-500" />}
-                    </div>
-                    <div className="flex-1">
-                      <p className="font-medium text-foreground">{activity.action}</p>
-                      <p className="text-sm text-muted-foreground">{activity.details}</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-sm text-muted-foreground">{activity.timestamp}</p>
->>>>>>> upstream/main
                     </div>
                   </div>
                 ))}
