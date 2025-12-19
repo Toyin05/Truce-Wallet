@@ -60,11 +60,7 @@ export default function Wallet() {
   const [selectedChain, setSelectedChain] = useState('ethereum');
   const [sendModalOpen, setSendModalOpen] = useState(false);
   const [receiveModalOpen, setReceiveModalOpen] = useState(false);
-<<<<<<< HEAD
   const [selectedToken, setSelectedToken] = useState<{ symbol: string; balance: number; chain: string } | null>(null);
-=======
-  const [selectedToken, setSelectedToken] = useState<any>(null);
->>>>>>> upstream/main
   const { toast } = useToast();
 
   const tokens = mockTokens[selectedChain as keyof typeof mockTokens] || [];
@@ -79,7 +75,6 @@ export default function Wallet() {
 
   return (
     <DashboardLayout>
-<<<<<<< HEAD
       <div className="p-4 sm:p-6 space-y-6">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -101,32 +96,10 @@ export default function Wallet() {
               </SelectContent>
             </Select>
           </div>
-=======
-      <div className="p-6 space-y-6">
-        {/* Header */}
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-3xl font-bold">My Wallet</h1>
-            <p className="text-muted-foreground">Multi-chain crypto wallet powered by BlockDAG</p>
-          </div>
-          <Select value={selectedChain} onValueChange={setSelectedChain}>
-            <SelectTrigger className="w-[180px] bg-card border-border">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              {chains.map((chain) => (
-                <SelectItem key={chain.id} value={chain.id}>
-                  <span className={chain.color}>{chain.name}</span>
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
->>>>>>> upstream/main
         </div>
 
         {/* Balance Card */}
         <Card className="bg-gradient-primary shadow-glow-primary border-0">
-<<<<<<< HEAD
           <CardContent className="p-4 sm:p-6">
             <div className="space-y-4">
               <div>
@@ -149,28 +122,6 @@ export default function Wallet() {
                   <Download className="w-4 h-4 mr-2" />
                   <span className="hidden xs:inline">Receive</span>
                   <span className="xs:hidden">Rec</span>
-=======
-          <CardContent className="p-6">
-            <div className="space-y-4">
-              <div>
-                <p className="text-sm text-white/80">Total Balance</p>
-                <p className="text-4xl font-bold text-white">${totalValue.toLocaleString()}</p>
-              </div>
-              <div className="flex gap-3">
-                <Button 
-                  className="flex-1 bg-white text-primary hover:bg-white/90"
-                  onClick={() => setSendModalOpen(true)}
-                >
-                  <Send className="w-4 h-4 mr-2" />
-                  Send
-                </Button>
-                <Button 
-                  className="flex-1 bg-white/10 text-white hover:bg-white/20 backdrop-blur"
-                  onClick={() => setReceiveModalOpen(true)}
-                >
-                  <Download className="w-4 h-4 mr-2" />
-                  Receive
->>>>>>> upstream/main
                 </Button>
               </div>
             </div>
@@ -189,7 +140,6 @@ export default function Wallet() {
               <Card key={token.symbol} className="bg-gradient-card border-border/50 hover:shadow-glow-primary transition-all duration-200">
                 <CardContent className="p-4">
                   <div className="flex items-center justify-between">
-<<<<<<< HEAD
                     <div className="flex items-center gap-3 min-w-0 flex-1">
                       <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-muted flex items-center justify-center text-lg sm:text-2xl flex-shrink-0">
                         {token.icon}
@@ -197,32 +147,15 @@ export default function Wallet() {
                       <div className="min-w-0">
                         <p className="font-semibold text-sm sm:text-base truncate">{token.name}</p>
                         <p className="text-xs sm:text-sm text-muted-foreground">
-=======
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center text-2xl">
-                        {token.icon}
-                      </div>
-                      <div>
-                        <p className="font-semibold">{token.name}</p>
-                        <p className="text-sm text-muted-foreground">
->>>>>>> upstream/main
                           {token.balance.toLocaleString()} {token.symbol}
                         </p>
                       </div>
                     </div>
-<<<<<<< HEAD
                     <div className="text-right flex-shrink-0">
                       <p className="font-semibold text-sm sm:text-base">${token.value.toLocaleString()}</p>
                       <div
                         className={cn(
                           'text-xs sm:text-sm flex items-center justify-end gap-1',
-=======
-                    <div className="text-right">
-                      <p className="font-semibold">${token.value.toLocaleString()}</p>
-                      <div
-                        className={cn(
-                          'text-sm flex items-center justify-end gap-1',
->>>>>>> upstream/main
                           token.change24h >= 0 ? 'text-success' : 'text-destructive'
                         )}
                       >
@@ -245,20 +178,13 @@ export default function Wallet() {
               <Card key={i} className="bg-gradient-card border-border/50 hover:shadow-glow-primary transition-all duration-200">
                 <CardContent className="p-4">
                   <div className="flex items-center justify-between">
-<<<<<<< HEAD
                     <div className="flex items-center gap-3 min-w-0 flex-1">
                       <div className={cn(
                         'w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center flex-shrink-0',
-=======
-                    <div className="flex items-center gap-3">
-                      <div className={cn(
-                        'w-10 h-10 rounded-full flex items-center justify-center',
->>>>>>> upstream/main
                         tx.type === 'send' && 'bg-destructive/10',
                         tx.type === 'receive' && 'bg-success/10',
                         tx.type === 'swap' && 'bg-primary/10'
                       )}>
-<<<<<<< HEAD
                         {tx.type === 'send' && <Send className="w-3 h-3 sm:w-4 sm:h-4 text-destructive" />}
                         {tx.type === 'receive' && <Download className="w-3 h-3 sm:w-4 sm:h-4 text-success" />}
                         {tx.type === 'swap' && <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />}
@@ -273,22 +199,6 @@ export default function Wallet() {
                         {tx.type === 'send' ? '-' : '+'}{tx.amount} {tx.token}
                       </p>
                       <p className="text-xs sm:text-sm text-muted-foreground">${tx.usdValue.toLocaleString()}</p>
-=======
-                        {tx.type === 'send' && <Send className="w-4 h-4 text-destructive" />}
-                        {tx.type === 'receive' && <Download className="w-4 h-4 text-success" />}
-                        {tx.type === 'swap' && <TrendingUp className="w-4 h-4 text-primary" />}
-                      </div>
-                      <div>
-                        <p className="font-semibold capitalize">{tx.type} {tx.token}</p>
-                        <p className="text-sm text-muted-foreground">{tx.time}</p>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <p className="font-semibold">
-                        {tx.type === 'send' ? '-' : '+'}{tx.amount} {tx.token}
-                      </p>
-                      <p className="text-sm text-muted-foreground">${tx.usdValue.toLocaleString()}</p>
->>>>>>> upstream/main
                     </div>
                   </div>
                 </CardContent>
@@ -310,7 +220,3 @@ export default function Wallet() {
     </DashboardLayout>
   );
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> upstream/main
