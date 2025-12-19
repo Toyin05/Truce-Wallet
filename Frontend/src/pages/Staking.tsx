@@ -103,7 +103,6 @@ export default function Staking() {
 
   return (
     <DashboardLayout>
-<<<<<<< HEAD
       <div className="p-4 sm:p-6 space-y-6">
         <div>
           <h1 className="text-2xl sm:text-3xl font-bold text-foreground">Staking</h1>
@@ -120,29 +119,10 @@ export default function Staking() {
               <div>
                 <p className="text-xs sm:text-sm text-muted-foreground">Total Staked</p>
                 <p className="text-lg sm:text-2xl font-bold text-foreground">$0.00</p>
-=======
-      <div className="p-6 space-y-6">
-        <div>
-          <h1 className="text-3xl font-bold text-foreground">Staking</h1>
-          <p className="text-muted-foreground">Earn rewards by staking your crypto on BlockDAG</p>
-        </div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <Card className="p-6 bg-gradient-to-br from-primary/20 to-primary/5 border-primary/20">
-            <div className="flex items-center gap-3">
-              <div className="p-3 rounded-lg bg-primary/20">
-                <Coins className="w-6 h-6 text-primary" />
-              </div>
-              <div>
-                <p className="text-sm text-muted-foreground">Total Staked</p>
-                <p className="text-2xl font-bold text-foreground">$0.00</p>
->>>>>>> upstream/main
               </div>
             </div>
           </Card>
 
-<<<<<<< HEAD
           <Card className="p-4 sm:p-6 bg-gradient-to-br from-green-500/20 to-green-500/5 border-green-500/20">
             <div className="flex items-center gap-3">
               <div className="p-2 sm:p-3 rounded-lg bg-green-500/20">
@@ -151,21 +131,10 @@ export default function Staking() {
               <div>
                 <p className="text-xs sm:text-sm text-muted-foreground">Total Rewards</p>
                 <p className="text-lg sm:text-2xl font-bold text-foreground">$0.00</p>
-=======
-          <Card className="p-6 bg-gradient-to-br from-green-500/20 to-green-500/5 border-green-500/20">
-            <div className="flex items-center gap-3">
-              <div className="p-3 rounded-lg bg-green-500/20">
-                <TrendingUp className="w-6 h-6 text-green-500" />
-              </div>
-              <div>
-                <p className="text-sm text-muted-foreground">Total Rewards</p>
-                <p className="text-2xl font-bold text-foreground">$0.00</p>
->>>>>>> upstream/main
               </div>
             </div>
           </Card>
 
-<<<<<<< HEAD
           <Card className="p-4 sm:p-6 bg-gradient-to-br from-blue-500/20 to-blue-500/5 border-blue-500/20">
             <div className="flex items-center gap-3">
               <div className="p-2 sm:p-3 rounded-lg bg-blue-500/20">
@@ -174,16 +143,6 @@ export default function Staking() {
               <div>
                 <p className="text-xs sm:text-sm text-muted-foreground">Active Positions</p>
                 <p className="text-lg sm:text-2xl font-bold text-foreground">0</p>
-=======
-          <Card className="p-6 bg-gradient-to-br from-blue-500/20 to-blue-500/5 border-blue-500/20">
-            <div className="flex items-center gap-3">
-              <div className="p-3 rounded-lg bg-blue-500/20">
-                <Calendar className="w-6 h-6 text-blue-500" />
-              </div>
-              <div>
-                <p className="text-sm text-muted-foreground">Active Positions</p>
-                <p className="text-2xl font-bold text-foreground">0</p>
->>>>>>> upstream/main
               </div>
             </div>
           </Card>
@@ -191,7 +150,6 @@ export default function Staking() {
 
         {/* Staking Pools */}
         <div>
-<<<<<<< HEAD
           <h2 className="text-lg sm:text-xl font-semibold mb-4 text-foreground">Available Pools</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {stakingPools.map(pool => (
@@ -204,38 +162,16 @@ export default function Staking() {
                     </div>
                     <div className="text-right flex-shrink-0">
                       <p className="text-2xl sm:text-3xl font-bold text-primary">{pool.apy}%</p>
-=======
-          <h2 className="text-xl font-semibold mb-4 text-foreground">Available Pools</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {stakingPools.map(pool => (
-              <Card key={pool.id} className="p-6 bg-card border-border hover:border-primary/50 transition-all">
-                <div className="space-y-4">
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <h3 className="text-lg font-semibold text-foreground">{pool.name}</h3>
-                      <p className="text-sm text-muted-foreground">{pool.token}</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-3xl font-bold text-primary">{pool.apy}%</p>
->>>>>>> upstream/main
                       <p className="text-xs text-muted-foreground">APY</p>
                     </div>
                   </div>
 
-<<<<<<< HEAD
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
-=======
-                  <div className="grid grid-cols-2 gap-4 text-sm">
->>>>>>> upstream/main
                     <div>
                       <p className="text-muted-foreground">Lock Period</p>
                       <p className="font-semibold text-foreground flex items-center gap-1">
                         <Lock className="w-3 h-3" />
-<<<<<<< HEAD
                         <span className="truncate">{pool.lockPeriod}</span>
-=======
-                        {pool.lockPeriod}
->>>>>>> upstream/main
                       </p>
                     </div>
                     <div>
@@ -256,18 +192,11 @@ export default function Staking() {
                   </div>
 
                   <Button 
-<<<<<<< HEAD
                     className="w-full text-sm sm:text-base" 
                     onClick={() => setSelectedPool(pool)}
                   >
                     <span className="hidden xs:inline">Stake {pool.token}</span>
                     <span className="xs:hidden">Stake</span>
-=======
-                    className="w-full" 
-                    onClick={() => setSelectedPool(pool)}
-                  >
-                    Stake {pool.token}
->>>>>>> upstream/main
                   </Button>
                 </div>
               </Card>

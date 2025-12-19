@@ -1,8 +1,5 @@
 import { useState, useRef } from 'react';
-<<<<<<< HEAD
 import { useNavigate } from 'react-router-dom';
-=======
->>>>>>> upstream/main
 import DashboardLayout from '@/components/DashboardLayout';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -47,25 +44,16 @@ import {
   Bookmark,
   Github,
   Twitter,
-<<<<<<< HEAD
   MessageSquare,
   LogOut
-=======
-  MessageSquare
->>>>>>> upstream/main
 } from 'lucide-react';
 import { useAuth } from '@/lib/auth';
 import { useToast } from '@/hooks/use-toast';
 
 export default function Profile() {
-<<<<<<< HEAD
   const { user, signOut } = useAuth();
   const { toast } = useToast();
   const navigate = useNavigate();
-=======
-  const { user } = useAuth();
-  const { toast } = useToast();
->>>>>>> upstream/main
   const [isEditing, setIsEditing] = useState(false);
   const [profilePicture, setProfilePicture] = useState<string | null>(null);
   const [profileData, setProfileData] = useState({
@@ -147,7 +135,6 @@ export default function Profile() {
     return null;
   };
 
-<<<<<<< HEAD
   const handleLogout = async () => {
     try {
       await signOut();
@@ -200,69 +187,28 @@ export default function Profile() {
                 <span className="xs:hidden">Out</span>
               </Button>
             </div>
-=======
-  return (
-    <DashboardLayout>
-      <div className="p-6 space-y-8">
-        {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-          <div>
-            <h1 className="text-4xl font-bold text-foreground mb-2">Profile Settings</h1>
-            <p className="text-muted-foreground text-lg">Manage your account settings and preferences</p>
-          </div>
-          <div className="flex items-center gap-3">
-            <Badge className="bg-gradient-to-r from-teal-600 to-teal-700 text-white border-0 px-4 py-2">
-              <Award className="w-4 h-4 mr-2" />
-              Verified User
-            </Badge>
-            <Button 
-              variant="outline" 
-              onClick={() => setIsEditing(!isEditing)}
-              className="border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white"
-            >
-              {isEditing ? <X className="w-4 h-4 mr-2" /> : <Edit className="w-4 h-4 mr-2" />}
-              {isEditing ? 'Cancel' : 'Edit Profile'}
-            </Button>
->>>>>>> upstream/main
           </div>
         </div>
 
         {/* Profile Overview */}
-<<<<<<< HEAD
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 sm:gap-6">
-=======
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
->>>>>>> upstream/main
           {/* Profile Card */}
           <Card className="p-6 bg-gradient-to-br from-teal-600/10 to-teal-700/5 border-teal-600/20">
             <div className="text-center space-y-4">
               <div className="relative inline-block">
-<<<<<<< HEAD
                 <Avatar className="w-20 h-20 sm:w-24 sm:h-24 mx-auto">
                   <AvatarImage src={profilePicture || "/api/placeholder/96/96"} />
                   <AvatarFallback className="text-xl sm:text-2xl bg-teal-600 text-white">
-=======
-                <Avatar className="w-24 h-24 mx-auto">
-                  <AvatarImage src={profilePicture || "/api/placeholder/96/96"} />
-                  <AvatarFallback className="text-2xl bg-teal-600 text-white">
->>>>>>> upstream/main
                     {profileData.fullName.split(' ').map(n => n[0]).join('')}
                   </AvatarFallback>
                 </Avatar>
                 <Button 
                   size="icon" 
                   variant="secondary" 
-<<<<<<< HEAD
                   className="absolute -bottom-1 -right-1 sm:-bottom-2 sm:-right-2 rounded-full h-7 w-7 sm:h-8 sm:w-8"
                   onClick={() => fileInputRef.current?.click()}
                 >
                   <Camera className="w-3 h-3 sm:w-4 sm:h-4" />
-=======
-                  className="absolute -bottom-2 -right-2 rounded-full h-8 w-8"
-                  onClick={() => fileInputRef.current?.click()}
-                >
-                  <Camera className="w-4 h-4" />
->>>>>>> upstream/main
                 </Button>
                 <input
                   ref={fileInputRef}
@@ -272,34 +218,20 @@ export default function Profile() {
                   className="hidden"
                 />
               </div>
-<<<<<<< HEAD
               <div className="text-center sm:text-left">
                 <h2 className="text-lg sm:text-xl font-bold text-foreground">{profileData.fullName}</h2>
                 <p className="text-sm sm:text-base text-muted-foreground">{profileData.email}</p>
                 {getJoinDateText() && (
                   <p className="text-xs sm:text-sm text-muted-foreground">{getJoinDateText()}</p>
-=======
-              <div>
-                <h2 className="text-xl font-bold text-foreground">{profileData.fullName}</h2>
-                <p className="text-muted-foreground">{profileData.email}</p>
-                {getJoinDateText() && (
-                  <p className="text-sm text-muted-foreground">{getJoinDateText()}</p>
->>>>>>> upstream/main
                 )}
               </div>
             </div>
           </Card>
 
           {/* Profile Information */}
-<<<<<<< HEAD
           <div className="lg:col-span-2 space-y-4 sm:space-y-6">
             <Card className="p-4 bg-card border-border">
               <h3 className="text-base font-bold text-foreground mb-4">Personal Information</h3>
-=======
-          <div className="lg:col-span-2 space-y-6">
-            <Card className="p-6 bg-card border-border">
-              <h3 className="text-lg font-bold text-foreground mb-6">Personal Information</h3>
->>>>>>> upstream/main
               <div className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
@@ -358,7 +290,6 @@ export default function Profile() {
                 </div>
               </div>
               {isEditing && (
-<<<<<<< HEAD
                 <div className="flex flex-col sm:flex-row gap-2 mt-4 sm:mt-6">
                   <Button 
                     onClick={handleSaveProfile} 
@@ -367,46 +298,24 @@ export default function Profile() {
                     <Save className="w-4 h-4 mr-2" />
                     <span className="hidden xs:inline">Save Changes</span>
                     <span className="xs:hidden">Save</span>
-=======
-                <div className="flex gap-2 mt-6">
-                  <Button 
-                    onClick={handleSaveProfile} 
-                    className="bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-2"
-                  >
-                    <Save className="w-4 h-4 mr-2" />
-                    Save Changes
->>>>>>> upstream/main
                   </Button>
                   <Button 
                     variant="outline" 
                     onClick={() => setIsEditing(false)}
-<<<<<<< HEAD
                     className="border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white text-sm sm:text-base"
                   >
                     <span className="hidden xs:inline">Cancel</span>
                     <span className="xs:hidden">Cancel</span>
-=======
-                    className="border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white"
-                  >
-                    Cancel
->>>>>>> upstream/main
                   </Button>
                 </div>
               )}
             </Card>
 
             {/* Preferences */}
-<<<<<<< HEAD
             <Card className="p-4 bg-card border-border">
               <h3 className="text-base font-bold text-foreground mb-4">Preferences</h3>
               <div className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-=======
-            <Card className="p-6 bg-card border-border">
-              <h3 className="text-lg font-bold text-foreground mb-6">Preferences</h3>
-              <div className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
->>>>>>> upstream/main
                   <div className="space-y-2">
                     <Label>Preferred Currency</Label>
                     <select className="w-full p-2 rounded-md border border-border bg-background text-foreground">
@@ -442,7 +351,6 @@ export default function Profile() {
 
         {/* Main Content Tabs */}
         <Tabs defaultValue="connections" className="w-full">
-<<<<<<< HEAD
           <TabsList className="grid w-full grid-cols-3 lg:w-auto lg:inline-grid h-auto">
             <TabsTrigger value="connections" className="text-xs py-2">Connections</TabsTrigger>
             <TabsTrigger value="notifications" className="text-xs py-2">Notifications</TabsTrigger>
@@ -467,55 +375,20 @@ export default function Profile() {
                       <div className="min-w-0">
                         <p className="font-medium text-foreground text-sm sm:text-base truncate">{account.platform}</p>
                         <p className="text-xs sm:text-sm text-muted-foreground truncate">{account.handle}</p>
-=======
-          <TabsList className="grid w-full grid-cols-3 lg:w-auto lg:inline-grid">
-            <TabsTrigger value="connections">Connections</TabsTrigger>
-            <TabsTrigger value="notifications">Notifications</TabsTrigger>
-            <TabsTrigger value="activity">Activity</TabsTrigger>
-          </TabsList>
-
-          {/* Connections Tab */}
-          <TabsContent value="connections" className="space-y-6">
-            <Card className="p-6 bg-card border-border">
-              <h3 className="text-lg font-bold text-foreground mb-6">Connected Accounts</h3>
-              <div className="space-y-4">
-                {socialAccounts.map((account) => (
-                  <div key={account.id} className="flex items-center justify-between p-4 rounded-lg border border-border hover:bg-muted/30 transition-colors">
-                    <div className="flex items-center gap-4">
-                      <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
-                        account.connected ? 'bg-green-500/20' : 'bg-muted'
-                      }`}>
-                        <account.icon className={`w-5 h-5 ${
-                          account.connected ? 'text-green-500' : 'text-muted-foreground'
-                        }`} />
-                      </div>
-                      <div>
-                        <p className="font-medium text-foreground">{account.platform}</p>
-                        <p className="text-sm text-muted-foreground">{account.handle}</p>
->>>>>>> upstream/main
                         {account.connected && account.lastSync && (
                           <p className="text-xs text-muted-foreground">Last sync: {account.lastSync}</p>
                         )}
                       </div>
                     </div>
-<<<<<<< HEAD
                     <div className="flex items-center gap-2 w-full sm:w-auto">
                       <Badge variant={account.connected ? "default" : "secondary"} className="text-xs">
-=======
-                    <div className="flex items-center gap-2">
-                      <Badge variant={account.connected ? "default" : "secondary"}>
->>>>>>> upstream/main
                         {account.connected ? 'Connected' : 'Disconnected'}
                       </Badge>
                       <Button 
                         variant="outline" 
                         size="sm"
                         onClick={() => handleAccountConnect(account.id)}
-<<<<<<< HEAD
                         className="border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white text-xs sm:text-sm px-2 sm:px-3"
-=======
-                        className="border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white"
->>>>>>> upstream/main
                       >
                         {account.connected ? 'Disconnect' : 'Connect'}
                       </Button>
@@ -527,15 +400,9 @@ export default function Profile() {
           </TabsContent>
 
           {/* Notifications Tab */}
-<<<<<<< HEAD
           <TabsContent value="notifications" className="space-y-4">
             <Card className="p-4 bg-card border-border">
               <h3 className="text-base font-bold text-foreground mb-4">Notification Preferences</h3>
-=======
-          <TabsContent value="notifications" className="space-y-6">
-            <Card className="p-6 bg-card border-border">
-              <h3 className="text-lg font-bold text-foreground mb-6">Notification Preferences</h3>
->>>>>>> upstream/main
               <div className="space-y-6">
                 {[
                   { id: 1, title: 'Price Alerts', description: 'Get notified about significant price movements', enabled: true },
@@ -545,7 +412,6 @@ export default function Profile() {
                   { id: 5, title: 'Weekly Reports', description: 'Portfolio performance summaries', enabled: true },
                   { id: 6, title: 'Educational Content', description: 'New learning materials and tips', enabled: true }
                 ].map((setting) => (
-<<<<<<< HEAD
                   <div key={setting.id} className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3 sm:p-4 rounded-lg border border-border hover:bg-muted/30 transition-colors">
                     <div className="flex-1">
                       <h4 className="font-medium text-foreground text-sm sm:text-base">{setting.title}</h4>
@@ -562,22 +428,6 @@ export default function Profile() {
                         }}
                       />
                     </div>
-=======
-                  <div key={setting.id} className="flex items-center justify-between p-4 rounded-lg border border-border hover:bg-muted/30 transition-colors">
-                    <div className="flex-1">
-                      <h4 className="font-medium text-foreground">{setting.title}</h4>
-                      <p className="text-sm text-muted-foreground">{setting.description}</p>
-                    </div>
-                    <Switch
-                      checked={setting.enabled}
-                      onCheckedChange={(checked) => {
-                        toast({
-                          title: checked ? 'Notifications Enabled' : 'Notifications Disabled',
-                          description: `${setting.title} notifications have been ${checked ? 'enabled' : 'disabled'}.`,
-                        });
-                      }}
-                    />
->>>>>>> upstream/main
                   </div>
                 ))}
               </div>
@@ -585,15 +435,9 @@ export default function Profile() {
           </TabsContent>
 
           {/* Activity Tab */}
-<<<<<<< HEAD
           <TabsContent value="activity" className="space-y-4">
             <Card className="p-4 bg-card border-border">
               <h3 className="text-base font-bold text-foreground mb-4">Recent Activity</h3>
-=======
-          <TabsContent value="activity" className="space-y-6">
-            <Card className="p-6 bg-card border-border">
-              <h3 className="text-lg font-bold text-foreground mb-6">Recent Activity</h3>
->>>>>>> upstream/main
               <div className="space-y-4">
                 {[
                   { action: 'Updated profile', details: 'Changed bio and website', timestamp: '2 hours ago', type: 'profile' },
@@ -602,15 +446,9 @@ export default function Profile() {
                   { action: 'Profile verification', details: 'Identity verified successfully', timestamp: '2 weeks ago', type: 'verification' }
                 ].map((activity, index) => (
 <<<<<<< HEAD
-                  <div key={index} className="flex flex-col sm:flex-row items-start gap-3 sm:items-center p-3 sm:p-4 rounded-lg border border-border hover:bg-muted/30 transition-colors">
                     <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center flex-shrink-0 ${
 =======
                   <div key={index} className="flex items-center gap-4 p-4 rounded-lg border border-border hover:bg-muted/30 transition-colors">
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
->>>>>>> upstream/main
-                      activity.type === 'security' ? 'bg-green-500/20' :
-                      activity.type === 'verification' ? 'bg-purple-500/20' :
-                      'bg-teal-500/20'
                     }`}>
 <<<<<<< HEAD
                       {activity.type === 'security' ? <Shield className="w-3 h-3 sm:w-4 sm:h-4 text-green-500" /> :
