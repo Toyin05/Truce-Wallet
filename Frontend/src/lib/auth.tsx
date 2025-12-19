@@ -1,13 +1,6 @@
-<<<<<<< HEAD
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import { User, Session, AuthError } from '@supabase/supabase-js';
 import { supabase } from '@/integrations/supabase/client';
-=======
-import { createContext, useContext, useEffect, useState } from 'react';
-import { User, Session } from '@supabase/supabase-js';
-import { supabase } from '@/integrations/supabase/client';
-import { useNavigate } from 'react-router-dom';
->>>>>>> upstream/main
 
 interface AuthContextType {
   user: User | null;
@@ -29,7 +22,6 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-<<<<<<< HEAD
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [session, setSession] = useState<Session | null>(null);
@@ -38,13 +30,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   // Computed auth state
   const isAuthenticated = !!(session && user && user.email_confirmed_at);
   const isEmailConfirmed = !!(user && user.email_confirmed_at);
-=======
-export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [user, setUser] = useState<User | null>(null);
-  const [session, setSession] = useState<Session | null>(null);
-  const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
->>>>>>> upstream/main
 
   useEffect(() => {
     // Get initial session
@@ -58,16 +43,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
       setUser(session?.user ?? null);
-<<<<<<< HEAD
       setLoading(false);
-=======
->>>>>>> upstream/main
     });
 
     return () => subscription.unsubscribe();
   }, []);
 
-<<<<<<< HEAD
   const getErrorMessage = (error: AuthError | Error | string): string => {
     if (typeof error === 'string') return error;
     
@@ -243,71 +224,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       const { error: signInError } = await supabase.auth.signInWithPassword({
         email: pseudoEmail,
         password: pseudoPassword,
-=======
-  const signUp = async (email: string, password: string, fullName: string) => {
-    const { error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        data: {
-          full_name: fullName,
-        },
-      },
-    });
-    if (error) throw error;
-    navigate('/dashboard');
-  };
-
-  const signIn = async (email: string, password: string) => {
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
-    if (error) throw error;
-    navigate('/dashboard');
-  };
-
-  const signInWithMetaMask = async () => {
-    if (!window.ethereum) {
-      throw new Error('MetaMask is not installed');
-    }
-
-    try {
-      // Request account access
-      const accounts = await window.ethereum.request({ 
-        method: 'eth_requestAccounts' 
-      });
-      const walletAddress = accounts[0];
-
-      // Sign a message to prove ownership
-      const message = `Sign this message to authenticate with Truce Wallet: ${Date.now()}`;
-      const signature = await window.ethereum.request({
-        method: 'personal_sign',
-        params: [message, walletAddress],
-      });
-
-      // Try to sign in with the wallet address
-      const { error: signInError } = await supabase.auth.signInWithPassword({
-        email: `${walletAddress}@metamask.temp`,
-        password: signature,
->>>>>>> upstream/main
       });
 
       if (signInError) {
         // If sign in fails, create a new account
         const { error: signUpError } = await supabase.auth.signUp({
-<<<<<<< HEAD
           email: pseudoEmail,
           password: pseudoPassword,
-=======
-          email: `${walletAddress}@metamask.temp`,
-          password: signature,
->>>>>>> upstream/main
           options: {
             data: {
               wallet_address: walletAddress,
               full_name: `User ${walletAddress.slice(0, 6)}`,
-<<<<<<< HEAD
               login_method: 'metamask',
             },
           },
@@ -355,22 +282,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         throw error;
       }
       throw new Error(getErrorMessage(error as AuthError));
-=======
-            },
-          },
-        });
-        if (signUpError) throw signUpError;
-      }
-
-      navigate('/dashboard');
-    } catch (error) {
-      throw error;
->>>>>>> upstream/main
     }
   };
 
   const signOut = async () => {
-<<<<<<< HEAD
     try {
       setLoading(true);
       const { error } = await supabase.auth.signOut();
@@ -499,14 +414,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       resendConfirmation,
       getErrorMessage
     }}>
-=======
-    await supabase.auth.signOut();
-    navigate('/login');
-  };
-
-  return (
-    <AuthContext.Provider value={{ user, session, loading, signUp, signIn, signInWithMetaMask, signOut }}>
->>>>>>> upstream/main
       {children}
     </AuthContext.Provider>
   );
@@ -522,7 +429,6 @@ export function useAuth() {
 
 declare global {
   interface Window {
-<<<<<<< HEAD
     ethereum?: {
       request: (args: { method: string; params?: unknown[] }) => Promise<unknown>;
       isMetaMask?: boolean;
@@ -530,8 +436,3 @@ declare global {
   }
 }
 
-=======
-    ethereum?: any;
-  }
-}
->>>>>>> upstream/main
