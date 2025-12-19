@@ -13,7 +13,6 @@ interface AuthContextType {
   user: User | null;
   session: Session | null;
   loading: boolean;
-<<<<<<< HEAD
   isAuthenticated: boolean;
   isEmailConfirmed: boolean;
   signUp: (email: string, password: string, fullName: string) => Promise<{ needsConfirmation: boolean }>;
@@ -26,12 +25,6 @@ interface AuthContextType {
   confirmPassword: (token: string) => Promise<void>;
   resendConfirmation: (email: string) => Promise<void>;
   getErrorMessage: (error: AuthError | Error | string) => string;
-=======
-  signUp: (email: string, password: string, fullName: string) => Promise<void>;
-  signIn: (email: string, password: string) => Promise<void>;
-  signInWithMetaMask: () => Promise<void>;
-  signOut: () => Promise<void>;
->>>>>>> upstream/main
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
