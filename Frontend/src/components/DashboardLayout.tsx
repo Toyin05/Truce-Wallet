@@ -14,10 +14,7 @@ import {
   LogOut,
   Menu,
   User,
-<<<<<<< HEAD
   X,
-=======
->>>>>>> upstream/main
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';

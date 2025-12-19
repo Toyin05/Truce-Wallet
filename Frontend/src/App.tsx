@@ -4,12 +4,9 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "./lib/auth";
-<<<<<<< HEAD
 import ProtectedRoute from "./routes/ProtectedRoute";
 
 // Import pages
-=======
->>>>>>> upstream/main
 import Index from "./pages/Index";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
