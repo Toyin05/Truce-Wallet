@@ -133,24 +133,6 @@ Truce Wallet is positioned at the intersection of all four trends.
 
 ---
 
-## Current Status
-
-**Wave 1: Ideation & Scaffolds**  
-Repository initialized, architecture designed, landing page live.
-
-**Next Milestones**  
-- Smart contract deployment on BlockDAG testnet
-- Functional wallet prototype with send/receive
-- DEX integration with live token swaps
-- AI model integration for price predictions
-
----
-
-## Repository
-
-This is an active buildathon project for BlockDAG.
-
-**Live Frontend**: [View on Lovable](https://lovable.dev/projects/5198ae75-6cc8-46e8-be12-1767ffac320d)  
 **GitHub**: [Truce Wallet Repository](https://github.com/Toyin05/truce-block-ai)
 
 ---

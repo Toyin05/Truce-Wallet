@@ -50,8 +50,13 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                  GitHub Repository
+                <a href="https://github.com/Toyin05/Truce-Wallet" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                  View on GitHub
+                </a>
+              </li>
+              <li>
+                <a href="/register" className="text-muted-foreground hover:text-primary transition-colors">
+                  Get Started
                 </a>
               </li>
             </ul>

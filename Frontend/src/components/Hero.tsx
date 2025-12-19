@@ -32,26 +32,22 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button 
               size="lg" 
-              className="w-full sm:w-auto text-base px-8 shadow-glow hover:shadow-glow/80 transition-all"
+              className="w-full sm:w-auto text-base px-8 bg-gradient-to-r from-blue-500 to-purple-600 hover:opacity-90 transition-all duration-200 shadow-lg hover:shadow-xl"
+              onClick={() => window.location.href = '/register'}
+            >
+              Get Started
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="w-full sm:w-auto text-base px-8 border-border/40 hover:bg-white/10 backdrop-blur"
               asChild
             >
               <a href="https://github.com/Toyin05/Truce-Wallet" target="_blank" rel="noopener noreferrer">
                 <Github className="mr-2 h-5 w-5" />
                 View on GitHub
-                <ArrowRight className="ml-2 h-5 w-5" />
               </a>
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="w-full sm:w-auto text-base px-8 border-border/40 hover:bg-accent/50"
-              onClick={() => {
-                const featuresSection = document.getElementById('features');
-                featuresSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }}
-            >
-              See Key Features
-              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
 
