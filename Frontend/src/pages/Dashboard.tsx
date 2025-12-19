@@ -30,7 +30,11 @@ export default function Dashboard() {
     change24h: 3.2,
   });
 
+<<<<<<< HEAD
   // Function to get time-based greeting
+=======
+  // Function to get time-based greeting in real time...
+>>>>>>> upstream/main
   const getTimeBasedGreeting = () => {
     const hour = new Date().getHours();
     if (hour < 12) return 'Good morning';
@@ -40,6 +44,7 @@ export default function Dashboard() {
 
   return (
     <DashboardLayout>
+<<<<<<< HEAD
       <div className="p-4 sm:p-6 space-y-6">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -50,6 +55,18 @@ export default function Dashboard() {
             <p className="text-muted-foreground text-sm sm:text-base">Truce Wallet - Powered by BlockDAG Network</p>
           </div>
           <div className="flex gap-2 w-full sm:w-auto">
+=======
+      <div className="p-6 space-y-6">
+        {/* Header */}
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="text-3xl font-bold">
+              {getTimeBasedGreeting()}{user?.user_metadata?.full_name ? `, ${user.user_metadata.full_name}` : ''}!
+            </h1>
+            <p className="text-muted-foreground">Truce Wallet - Powered by BlockDAG Network</p>
+          </div>
+          <div className="flex gap-2">
+>>>>>>> upstream/main
             <Button 
               size="sm" 
               style={{
@@ -58,10 +75,17 @@ export default function Dashboard() {
                 borderColor: '#14b8a6',
                 borderWidth: '1px'
               }}
+<<<<<<< HEAD
               className="flex-1 sm:flex-none whitespace-nowrap overflow-hidden text-ellipsis"
             >
               <Download className="w-4 h-4 mr-2 flex-shrink-0" />
               <span>Receive</span>
+=======
+              className="transition-all duration-200 hover:shadow-lg"
+            >
+              <Download className="w-4 h-4 mr-2" />
+              Receive
+>>>>>>> upstream/main
             </Button>
             <Button 
               variant="outline" 
@@ -72,17 +96,28 @@ export default function Dashboard() {
                 borderColor: '#14b8a6',
                 borderWidth: '1px'
               }}
+<<<<<<< HEAD
               className="flex-1 sm:flex-none hover:bg-teal-600 hover:text-white cursor-pointer"
             >
               <Send className="w-4 h-4 mr-2" />
               <span className="hidden xs:inline">Send</span>
               <span className="xs:hidden">Send</span>
+=======
+              className="hover:bg-teal-600 hover:text-white transition-all duration-200 hover:shadow-lg"
+            >
+              <Send className="w-4 h-4 mr-2" />
+              Send
+>>>>>>> upstream/main
             </Button>
           </div>
         </div>
 
         {/* Stats Grid */}
+<<<<<<< HEAD
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+=======
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+>>>>>>> upstream/main
           <Card className="bg-gradient-to-br from-teal-600 to-teal-700 border-teal-600/50 hover:shadow-glow-primary transition-all duration-200">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
               <CardTitle className="text-sm font-medium text-muted-foreground">Total Balance</CardTitle>
@@ -146,10 +181,17 @@ export default function Dashboard() {
           <CardHeader>
             <CardTitle>Quick Actions</CardTitle>
           </CardHeader>
+<<<<<<< HEAD
           <CardContent className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             <Button 
               variant="outline" 
               className="h-20 flex-col gap-2 border-teal-600 hover:bg-teal-600 hover:text-white cursor-pointer"
+=======
+          <CardContent className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <Button 
+              variant="outline" 
+              className="h-20 flex-col gap-2 border-teal-600 hover:border-teal-400 hover:bg-teal-600 hover:text-white transition-all duration-200"
+>>>>>>> upstream/main
               style={{
                 backgroundColor: 'transparent',
                 color: '#14b8a6',
@@ -162,7 +204,11 @@ export default function Dashboard() {
             </Button>
             <Button 
               variant="outline" 
+<<<<<<< HEAD
               className="h-20 flex-col gap-2 border-teal-600 hover:bg-teal-600 hover:text-white cursor-pointer"
+=======
+              className="h-20 flex-col gap-2 border-teal-600 hover:border-teal-400 hover:bg-teal-600 hover:text-white transition-all duration-200"
+>>>>>>> upstream/main
               style={{
                 backgroundColor: '#14b8a6',
                 color: 'rgb(15 23 42)',
@@ -175,7 +221,11 @@ export default function Dashboard() {
             </Button>
             <Button 
               variant="outline" 
+<<<<<<< HEAD
               className="h-20 flex-col gap-2 border-teal-600 hover:bg-teal-600 hover:text-white cursor-pointer"
+=======
+              className="h-20 flex-col gap-2 border-teal-600 hover:border-teal-400 hover:bg-teal-600 hover:text-white transition-all duration-200"
+>>>>>>> upstream/main
               style={{
                 backgroundColor: 'transparent',
                 color: '#14b8a6',
@@ -188,7 +238,11 @@ export default function Dashboard() {
             </Button>
             <Button 
               variant="outline" 
+<<<<<<< HEAD
               className="h-20 flex-col gap-2 border-teal-600 hover:bg-teal-600 hover:text-white cursor-pointer"
+=======
+              className="h-20 flex-col gap-2 border-teal-600 hover:border-teal-400 hover:bg-teal-600 hover:text-white transition-all duration-200"
+>>>>>>> upstream/main
               style={{
                 backgroundColor: 'transparent',
                 color: '#14b8a6',
@@ -203,7 +257,11 @@ export default function Dashboard() {
         </Card>
 
         {/* Recent Activity & AI Insights */}
+<<<<<<< HEAD
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+=======
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+>>>>>>> upstream/main
           <Card className="bg-gradient-card border-border/50">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -263,7 +321,11 @@ export default function Dashboard() {
           </Card>
         </div>
 
+<<<<<<< HEAD
         {/* Enhanced AI Assistant CTA Section */}
+=======
+        {/* AI Assistant CTA Section */}
+>>>>>>> upstream/main
         <Card className="bg-gradient-to-br from-teal-600/10 to-blue-600/10 border-teal-600/30 overflow-hidden">
           <CardHeader className="text-center pb-4">
             <div className="flex items-center justify-center gap-3 mb-4">
@@ -277,7 +339,11 @@ export default function Dashboard() {
             </div>
           </CardHeader>
           <CardContent className="space-y-6">
+<<<<<<< HEAD
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+=======
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+>>>>>>> upstream/main
               <div className="space-y-4">
                 <h3 className="text-lg font-semibold text-white">
                   Smart Risk Protection
@@ -334,11 +400,19 @@ export default function Dashboard() {
             <div className="border-t border-teal-600/20 pt-6">
               <Button 
                 asChild
+<<<<<<< HEAD
                 className="w-full bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 text-white cursor-pointer font-semibold text-sm sm:text-lg py-4 sm:py-6"
               >
                 <Link to="/dashboard/ai">
                   <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" />
                   <span className="text-xs sm:text-base">Start AI Chat Session</span>
+=======
+                className="w-full bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 font-semibold text-lg py-6"
+              >
+                <Link to="/dashboard/ai">
+                  <MessageSquare className="w-5 h-5 mr-3" />
+                  Start AI Chat Session
+>>>>>>> upstream/main
                 </Link>
               </Button>
               

@@ -62,12 +62,20 @@ export default function AIAssistant() {
       };
 
       setMessages((prev) => [...prev, assistantMessage]);
+<<<<<<< HEAD
     } catch (error: unknown) {
       console.error('AI Chat Error:', error);
       const errorMsg = error instanceof Error ? error.message : 'Failed to get AI response';
       toast({
         title: 'Error',
         description: errorMsg,
+=======
+    } catch (error: any) {
+      console.error('AI Chat Error:', error);
+      toast({
+        title: 'Error',
+        description: error.message || 'Failed to get AI response',
+>>>>>>> upstream/main
         variant: 'destructive',
       });
       
@@ -96,30 +104,51 @@ export default function AIAssistant() {
         {/* Header */}
         <div className="p-3 border-b border-border/50 bg-background/95 backdrop-blur-sm">
           <div className="flex items-center gap-3">
+<<<<<<< HEAD
             <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-teal-600 flex items-center justify-center shadow-sm">
               <Bot className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
             </div>
             <div>
               <h1 className="text-sm sm:text-base font-semibold">AI Assistant</h1>
+=======
+            <div className="w-9 h-9 rounded-full bg-teal-600 flex items-center justify-center shadow-sm">
+              <Bot className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <h1 className="text-base font-semibold">AI Assistant</h1>
+>>>>>>> upstream/main
               <p className="text-xs text-muted-foreground">Online</p>
             </div>
           </div>
         </div>
 
         {/* Messages */}
+<<<<<<< HEAD
         <div className="flex-1 overflow-y-auto px-3 sm:px-4 py-3 space-y-3 bg-background/30">
+=======
+        <div className="flex-1 overflow-y-auto px-4 py-3 space-y-3 bg-background/30">
+>>>>>>> upstream/main
           {messages.map((message, index) => (
             <div
               key={index}
               className={`flex gap-3 ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
             >
               {message.role === 'assistant' && (
+<<<<<<< HEAD
                 <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-teal-600 flex items-center justify-center flex-shrink-0 shadow-sm">
                   <Bot className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                 </div>
               )}
               <div
                 className={`max-w-[85%] sm:max-w-[75%] rounded-2xl px-2 sm:px-3 py-2 ${
+=======
+                <div className="w-7 h-7 rounded-full bg-teal-600 flex items-center justify-center flex-shrink-0 shadow-sm">
+                  <Bot className="w-4 h-4 text-white" />
+                </div>
+              )}
+              <div
+                className={`max-w-[75%] rounded-2xl px-3 py-2 ${
+>>>>>>> upstream/main
                   message.role === 'user' ? 'shadow-sm' : 'bg-card border border-border/30'
                 }`}
                 style={{
@@ -134,20 +163,30 @@ export default function AIAssistant() {
                   })
                 }}
               >
+<<<<<<< HEAD
                 <p className="text-xs sm:text-sm leading-relaxed font-medium">{message.content}</p>
+=======
+                <p className="text-sm leading-relaxed font-medium">{message.content}</p>
+>>>>>>> upstream/main
                 <p className="text-xs mt-1 opacity-60">
                   {message.timestamp.toLocaleTimeString()}
                 </p>
               </div>
               {message.role === 'user' && (
+<<<<<<< HEAD
                 <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-muted flex items-center justify-center flex-shrink-0">
                   <User className="w-3 h-3 sm:w-4 sm:h-4" />
+=======
+                <div className="w-7 h-7 rounded-full bg-muted flex items-center justify-center flex-shrink-0">
+                  <User className="w-4 h-4" />
+>>>>>>> upstream/main
                 </div>
               )}
             </div>
           ))}
 
           {loading && (
+<<<<<<< HEAD
             <div className="flex gap-2 sm:gap-3">
               <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-teal-600 flex items-center justify-center shadow-sm">
                 <Bot className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
@@ -157,6 +196,17 @@ export default function AIAssistant() {
                   <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-teal-500 animate-bounce" style={{ animationDelay: '0ms' }} />
                   <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-teal-500 animate-bounce" style={{ animationDelay: '150ms' }} />
                   <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-teal-500 animate-bounce" style={{ animationDelay: '300ms' }} />
+=======
+            <div className="flex gap-3">
+              <div className="w-7 h-7 rounded-full bg-teal-600 flex items-center justify-center shadow-sm">
+                <Bot className="w-4 h-4 text-white" />
+              </div>
+              <div className="bg-card border border-border/30 rounded-2xl px-3 py-2 max-w-[200px]">
+                <div className="flex items-center gap-1">
+                  <div className="w-2 h-2 rounded-full bg-teal-500 animate-bounce" style={{ animationDelay: '0ms' }} />
+                  <div className="w-2 h-2 rounded-full bg-teal-500 animate-bounce" style={{ animationDelay: '150ms' }} />
+                  <div className="w-2 h-2 rounded-full bg-teal-500 animate-bounce" style={{ animationDelay: '300ms' }} />
+>>>>>>> upstream/main
                 </div>
               </div>
             </div>
@@ -166,19 +216,32 @@ export default function AIAssistant() {
 
         {/* Quick Prompts */}
         {messages.length === 1 && (
+<<<<<<< HEAD
           <div className="px-3 sm:px-4 pb-3">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+=======
+          <div className="px-4 pb-3">
+            <div className="grid grid-cols-2 gap-2">
+>>>>>>> upstream/main
               {quickPrompts.map((prompt) => (
                 <Button
                   key={prompt}
                   variant="outline"
                   size="sm"
+<<<<<<< HEAD
                   className="text-xs border-teal-600/50 hover:border-teal-600 hover:bg-teal-600 hover:text-white transition-all duration-200 h-8 sm:h-auto"
                   onClick={() => sendMessage(prompt)}
                   disabled={loading}
                 >
                   <span className="hidden xs:inline">{prompt}</span>
                   <span className="xs:hidden truncate">{prompt}</span>
+=======
+                  className="text-xs border-teal-600/50 hover:border-teal-600 hover:bg-teal-600 hover:text-white transition-all duration-200"
+                  onClick={() => sendMessage(prompt)}
+                  disabled={loading}
+                >
+                  {prompt}
+>>>>>>> upstream/main
                 </Button>
               ))}
             </div>
@@ -186,16 +249,27 @@ export default function AIAssistant() {
         )}
 
         {/* Input */}
+<<<<<<< HEAD
         <div className="p-3 sm:p-4 border-t border-border/50 bg-background/95 backdrop-blur-sm">
+=======
+        <div className="p-4 border-t border-border/50 bg-background/95 backdrop-blur-sm">
+>>>>>>> upstream/main
           <form
             onSubmit={(e) => {
               e.preventDefault();
               sendMessage();
             }}
+<<<<<<< HEAD
             className="flex items-center gap-2 sm:gap-3"
           >
             {/* Left Icons - Hidden on small screens */}
             <div className="hidden sm:flex items-center gap-2">
+=======
+            className="flex items-center gap-3"
+          >
+            {/* Left Icons */}
+            <div className="flex items-center gap-2">
+>>>>>>> upstream/main
               <Button
                 type="button"
                 size="sm"
@@ -249,7 +323,11 @@ export default function AIAssistant() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask me anything about crypto..."
+<<<<<<< HEAD
                 className="h-10 sm:h-12 bg-background border-border rounded-2xl text-sm sm:text-base"
+=======
+                className="h-12 bg-background border-border rounded-2xl"
+>>>>>>> upstream/main
                 disabled={loading}
               />
             </div>
@@ -259,15 +337,25 @@ export default function AIAssistant() {
               type="submit"
               size="sm"
               disabled={loading}
+<<<<<<< HEAD
               className="h-10 sm:h-12 w-10 sm:w-12 p-0 rounded-full bg-teal-600 hover:bg-teal-700 transition-all duration-200"
+=======
+              className="h-12 w-12 p-0 rounded-full bg-teal-600 hover:bg-teal-700 transition-all duration-200"
+>>>>>>> upstream/main
               style={{
                 backgroundColor: '#14b8a6'
               }}
             >
               {loading ? (
+<<<<<<< HEAD
                 <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 animate-spin" />
               ) : (
                 <Send className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+=======
+                <Loader2 className="w-5 h-5 animate-spin" />
+              ) : (
+                <Send className="w-5 h-5 text-white" />
+>>>>>>> upstream/main
               )}
             </Button>
           </form>
@@ -279,4 +367,7 @@ export default function AIAssistant() {
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> upstream/main
