@@ -24,7 +24,11 @@ const Index = () => {
         <MassAdoption />
       </main>
       
+<<<<<<< HEAD
+      {/* Persistent Bottom CTA */}
+=======
       {/* Bottom CTA */}
+>>>>>>> upstream/main
       <section className="py-16 bg-gradient-to-r from-blue-500/10 via-purple-600/10 to-blue-500/10 border-y border-white/10">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto space-y-6">

@@ -34,7 +34,7 @@ const Header = () => {
             </div>
             <div className="flex flex-col">
               <span className="text-xl font-bold tracking-tight font-['Space_Grotesk']">
-                Truce Wallet
+                Truce-Wallet
               </span>
               <span className="text-xs text-muted-foreground">Built on BlockDAG</span>
             </div>
@@ -106,3 +106,4 @@ const Header = () => {
 };
 
 export default Header;
+

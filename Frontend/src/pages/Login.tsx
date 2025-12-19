@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+import { Navigate } from 'react-router-dom';
+
+export default function Login() {
+  return <Navigate to="/auth/login" replace />;
+=======
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -234,4 +240,5 @@ export default function Login() {
       </div>
     </div>
   );
+>>>>>>> upstream/main
 }
