@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 import { Send, Bot, User, Loader2, Sparkles, Plus, Camera, Image } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
+import { MessageFormatter } from '@/components/MessageFormatter';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -134,7 +135,7 @@ export default function AIAssistant() {
                   })
                 }}
               >
-                <p className="text-xs sm:text-sm leading-relaxed font-medium">{message.content}</p>
+                <MessageFormatter content={message.content} className="text-xs sm:text-sm" />
                 <p className="text-xs mt-1 opacity-60">
                   {message.timestamp.toLocaleTimeString()}
                 </p>
@@ -276,6 +277,7 @@ export default function AIAssistant() {
     </DashboardLayout>
   );
 }
+
 
 
 
