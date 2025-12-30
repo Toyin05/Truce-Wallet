@@ -327,7 +327,7 @@ Follow us for the latest updates, product announcements, development progress, a
 **Smart Contracts**: [View on Google Drive](https://drive.google.com/file/d/1MzzMfox_JqZM-Pu4QeuJMsjix1qtRT-k/view?usp=drive_link)  
 **Architecture Overview**: [View on Canva](https://www.canva.com/design/DAG4QD4NUwc/yDnfS71q_BzoWUYoXrbEtA/edit?utm_content=DAG4QD4NUwc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)  
 **X (Twitter)**: [@TruceWallet](https://x.com/TruceWallet?s=09)  
-**Live Link**: [View on Vercel](https://truce-wallet-hfu2.vercel.app/)
+**Live Link**: [View on Vercel](https://truce-wallet-y8iq.vercel.app/)
 
 ---
 
