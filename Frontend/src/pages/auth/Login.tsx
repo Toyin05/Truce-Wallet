@@ -227,7 +227,7 @@ export default function Login() {
                 ) : (
                   <>
                     <img 
-                      src="/src/google-icon-logo.svg" 
+                      src="/icons/google.svg" 
                       alt="Google" 
                       className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2 group-hover:scale-110 transition-transform duration-200" 
                     />
@@ -248,7 +248,7 @@ export default function Login() {
                 ) : (
                   <>
                     <img 
-                      src="/src/github-icon-logo.svg" 
+                      src="/icons/github.svg" 
                       alt="GitHub" 
                       className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2 group-hover:scale-110 transition-transform duration-200" 
                     />
@@ -272,7 +272,7 @@ export default function Login() {
                 ) : (
                   <>
                     <img 
-                      src="/src/discord-icon-logo.svg" 
+                      src="/icons/discord.svg" 
                       alt="Discord" 
                       className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2 group-hover:scale-110 transition-transform duration-200" 
                     />
@@ -293,7 +293,7 @@ export default function Login() {
                 ) : (
                   <>
                     <img 
-                      src="/src/metamask-icon-logo.svg" 
+                      src="/icons/metamask.svg" 
                       alt="MetaMask" 
                       className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2 group-hover:scale-110 transition-transform duration-200" 
                     />

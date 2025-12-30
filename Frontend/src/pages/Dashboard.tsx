@@ -22,12 +22,12 @@ import { cn } from '@/lib/utils';
 export default function Dashboard() {
   const { user } = useAuth();
   const [stats, setStats] = useState({
-    totalBalance: 24567.89,
-    totalAssets: 8,
-    bestPerformer: 'ETH',
-    bestPerformerGain: 12.5,
-    stakedAmount: 5000,
-    change24h: 3.2,
+    totalBalance: 0,
+    totalAssets: 0,
+    bestPerformer: null,
+    bestPerformerGain: 0,
+    stakedAmount: 0,
+    change24h: 0,
   });
 
   // Function to get time-based greeting
@@ -111,7 +111,7 @@ export default function Dashboard() {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">{stats.totalAssets}</div>
-              <p className="text-xs text-muted-foreground mt-1">Across 4 chains</p>
+              <p className="text-xs text-muted-foreground mt-1">Start by adding assets</p>
             </CardContent>
           </Card>
 
@@ -121,10 +121,10 @@ export default function Dashboard() {
               <Award className="w-4 h-4 text-warning" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">{stats.bestPerformer}</div>
-              <div className="flex items-center text-sm text-success mt-1">
-                <TrendingUp className="w-3 h-3 mr-1" />
-                +{stats.bestPerformerGain}% today
+              <div className="text-2xl font-bold">No Assets</div>
+              <div className="flex items-center text-sm text-muted-foreground mt-1">
+                <Activity className="w-3 h-3 mr-1" />
+                Add assets to see performance
               </div>
             </CardContent>
           </Card>
@@ -136,7 +136,7 @@ export default function Dashboard() {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">${stats.stakedAmount.toLocaleString()}</div>
-              <p className="text-xs text-muted-foreground mt-1">Earning 12.5% APY</p>
+              <p className="text-xs text-muted-foreground mt-1">Start staking to earn rewards</p>
             </CardContent>
           </Card>
         </div>
@@ -213,23 +213,13 @@ export default function Dashboard() {
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
-                {[1, 2, 3].map((i) => (
-                  <div key={i} className="flex items-center justify-between p-3 rounded-lg bg-muted/20 hover:bg-muted/30 transition-all duration-200">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                        <Send className="w-4 h-4 text-primary" />
-                      </div>
-                      <div>
-                        <p className="font-medium">Sent ETH</p>
-                        <p className="text-xs text-muted-foreground">2 hours ago</p>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <p className="font-medium">-0.5 ETH</p>
-                      <p className="text-xs text-muted-foreground">$1,250.00</p>
-                    </div>
+                <div className="flex items-center justify-center p-8 rounded-lg bg-muted/10">
+                  <div className="text-center">
+                    <Activity className="w-8 h-8 text-muted-foreground mx-auto mb-2" />
+                    <p className="text-sm text-muted-foreground">No transactions yet</p>
+                    <p className="text-xs text-muted-foreground mt-1">Your transaction history will appear here</p>
                   </div>
-                ))}
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -243,20 +233,14 @@ export default function Dashboard() {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <div className="p-4 rounded-lg bg-primary/5 border border-primary/20">
-                  <p className="text-sm">
-                    <strong>Bitcoin</strong> is showing strong bullish momentum. Consider increasing your position by 5-10% based on technical indicators.
-                  </p>
-                </div>
-                <div className="p-4 rounded-lg bg-success/5 border border-success/20">
-                  <p className="text-sm">
-                    <strong>Ethereum</strong> staking rewards are at 12.5% APY. Your portfolio could benefit from staking 20% of your ETH holdings.
-                  </p>
-                </div>
-                <div className="p-4 rounded-lg bg-warning/5 border border-warning/20">
-                  <p className="text-sm">
-                    <strong>Market Alert:</strong> High volatility expected in the next 24 hours. Consider setting stop-loss orders for protection.
-                  </p>
+                <div className="flex items-center justify-center p-8 rounded-lg bg-muted/10">
+                  <div className="text-center">
+                    <MessageSquare className="w-8 h-8 text-muted-foreground mx-auto mb-2" />
+                    <p className="text-sm text-muted-foreground mb-2">AI Insights Coming Soon</p>
+                    <p className="text-xs text-muted-foreground">
+                      Add some assets to your wallet to receive personalized AI-powered market insights and recommendations.
+                    </p>
+                  </div>
                 </div>
               </div>
             </CardContent>
@@ -360,3 +344,4 @@ export default function Dashboard() {
     </DashboardLayout>
   );
 }
+
