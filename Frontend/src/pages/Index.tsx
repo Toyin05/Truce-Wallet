@@ -46,13 +46,6 @@ const Index = () => {
                     allowFullScreen
                   ></iframe>
                 </div>
-                
-                {/* Video Overlay with Play Button (fallback for users who prefer click-to-play) */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black/20 rounded-xl cursor-pointer group">
-                  <div className="bg-white/90 rounded-full p-4 group-hover:bg-white transition-colors duration-300">
-                    <Play className="w-8 h-8 text-black ml-1" fill="currentColor" />
-                  </div>
-                </div>
               </div>
               
               {/* Video Description */}

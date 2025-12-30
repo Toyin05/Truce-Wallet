@@ -19,7 +19,9 @@ import {
   TrendingUp, 
   TrendingDown,
   Copy,
-  ExternalLink 
+  ExternalLink,
+  Wallet as WalletIcon,
+  Activity
 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
@@ -32,29 +34,13 @@ const chains = [
 ];
 
 const mockTokens = {
-  ethereum: [
-    { name: 'Ethereum', symbol: 'ETH', balance: 2.456, value: 6140, change24h: 3.2, icon: '⟠' },
-    { name: 'USD Coin', symbol: 'USDC', balance: 5000, value: 5000, change24h: 0.01, icon: '💵' },
-    { name: 'Uniswap', symbol: 'UNI', balance: 150, value: 1200, change24h: -1.5, icon: '🦄' },
-  ],
-  polygon: [
-    { name: 'Polygon', symbol: 'MATIC', balance: 2500, value: 2750, change24h: 5.3, icon: '🔷' },
-    { name: 'Aave', symbol: 'AAVE', balance: 10, value: 900, change24h: 2.1, icon: '👻' },
-  ],
-  bsc: [
-    { name: 'BNB', symbol: 'BNB', balance: 15, value: 4500, change24h: 1.8, icon: '💰' },
-    { name: 'PancakeSwap', symbol: 'CAKE', balance: 200, value: 600, change24h: -0.5, icon: '🥞' },
-  ],
-  blockdag: [
-    { name: 'BlockDAG', symbol: 'BDAG', balance: 10000, value: 3000, change24h: 8.5, icon: '⛓️' },
-  ],
+  ethereum: [],
+  polygon: [],
+  bsc: [],
+  blockdag: [],
 };
 
-const mockTransactions = [
-  { type: 'send', token: 'ETH', amount: 0.5, usdValue: 1250, time: '2 hours ago', status: 'success' },
-  { type: 'receive', token: 'USDC', amount: 1000, usdValue: 1000, time: '5 hours ago', status: 'success' },
-  { type: 'swap', token: 'UNI', amount: 50, usdValue: 400, time: '1 day ago', status: 'success' },
-];
+const mockTransactions = [];
 
 export default function Wallet() {
   const [selectedChain, setSelectedChain] = useState('ethereum');
@@ -136,74 +122,127 @@ export default function Wallet() {
           </TabsList>
 
           <TabsContent value="tokens" className="space-y-4">
-            {tokens.map((token) => (
-              <Card key={token.symbol} className="bg-gradient-card border-border/50 hover:shadow-glow-primary transition-all duration-200">
-                <CardContent className="p-4">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3 min-w-0 flex-1">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-muted flex items-center justify-center text-lg sm:text-2xl flex-shrink-0">
-                        {token.icon}
-                      </div>
-                      <div className="min-w-0">
-                        <p className="font-semibold text-sm sm:text-base truncate">{token.name}</p>
-                        <p className="text-xs sm:text-sm text-muted-foreground">
-                          {token.balance.toLocaleString()} {token.symbol}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="text-right flex-shrink-0">
-                      <p className="font-semibold text-sm sm:text-base">${token.value.toLocaleString()}</p>
-                      <div
-                        className={cn(
-                          'text-xs sm:text-sm flex items-center justify-end gap-1',
-                          token.change24h >= 0 ? 'text-success' : 'text-destructive'
-                        )}
-                      >
-                        {token.change24h >= 0 ? (
-                          <TrendingUp className="w-3 h-3" />
-                        ) : (
-                          <TrendingDown className="w-3 h-3" />
-                        )}
-                        {Math.abs(token.change24h)}%
-                      </div>
-                    </div>
+            {tokens.length === 0 ? (
+              <Card className="bg-gradient-card border-border/50">
+                <CardContent className="p-8">
+                  <div className="text-center">
+                    <WalletIcon className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+                    <h3 className="text-lg font-semibold mb-2">No Assets Found</h3>
+                    <p className="text-muted-foreground mb-4">
+                      You don't have any tokens on {chains.find(c => c.id === selectedChain)?.name} yet.
+                    </p>
+                    <Button 
+                      onClick={() => setReceiveModalOpen(true)}
+                      className="bg-gradient-to-r from-blue-500 to-purple-600 hover:opacity-90"
+                    >
+                      <Download className="w-4 h-4 mr-2" />
+                      Receive Tokens
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
-            ))}
+            ) : (
+              tokens.map((token) => (
+                <Card key={token.symbol} className="bg-gradient-card border-border/50 hover:shadow-glow-primary transition-all duration-200">
+                  <CardContent className="p-4">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3 min-w-0 flex-1">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-muted flex items-center justify-center text-lg sm:text-2xl flex-shrink-0">
+                          {token.icon}
+                        </div>
+                        <div className="min-w-0">
+                          <p className="font-semibold text-sm sm:text-base truncate">{token.name}</p>
+                          <p className="text-xs sm:text-sm text-muted-foreground">
+                            {token.balance.toLocaleString()} {token.symbol}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="text-right flex-shrink-0">
+                        <p className="font-semibold text-sm sm:text-base">${token.value.toLocaleString()}</p>
+                        <div
+                          className={cn(
+                            'text-xs sm:text-sm flex items-center justify-end gap-1',
+                            token.change24h >= 0 ? 'text-success' : 'text-destructive'
+                          )}
+                        >
+                          {token.change24h >= 0 ? (
+                            <TrendingUp className="w-3 h-3" />
+                          ) : (
+                            <TrendingDown className="w-3 h-3" />
+                          )}
+                          {Math.abs(token.change24h)}%
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))
+            )}
           </TabsContent>
 
           <TabsContent value="transactions" className="space-y-4">
-            {mockTransactions.map((tx, i) => (
-              <Card key={i} className="bg-gradient-card border-border/50 hover:shadow-glow-primary transition-all duration-200">
-                <CardContent className="p-4">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3 min-w-0 flex-1">
-                      <div className={cn(
-                        'w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center flex-shrink-0',
-                        tx.type === 'send' && 'bg-destructive/10',
-                        tx.type === 'receive' && 'bg-success/10',
-                        tx.type === 'swap' && 'bg-primary/10'
-                      )}>
-                        {tx.type === 'send' && <Send className="w-3 h-3 sm:w-4 sm:h-4 text-destructive" />}
-                        {tx.type === 'receive' && <Download className="w-3 h-3 sm:w-4 sm:h-4 text-success" />}
-                        {tx.type === 'swap' && <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />}
-                      </div>
-                      <div className="min-w-0">
-                        <p className="font-semibold capitalize text-sm sm:text-base truncate">{tx.type} {tx.token}</p>
-                        <p className="text-xs sm:text-sm text-muted-foreground">{tx.time}</p>
-                      </div>
-                    </div>
-                    <div className="text-right flex-shrink-0">
-                      <p className="font-semibold text-sm sm:text-base">
-                        {tx.type === 'send' ? '-' : '+'}{tx.amount} {tx.token}
-                      </p>
-                      <p className="text-xs sm:text-sm text-muted-foreground">${tx.usdValue.toLocaleString()}</p>
+            {mockTransactions.length === 0 ? (
+              <Card className="bg-gradient-card border-border/50">
+                <CardContent className="p-8">
+                  <div className="text-center">
+                    <Activity className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+                    <h3 className="text-lg font-semibold mb-2">No Transactions Yet</h3>
+                    <p className="text-muted-foreground mb-4">
+                      Your transaction history will appear here once you start using your wallet.
+                    </p>
+                    <div className="flex gap-2 justify-center">
+                      <Button 
+                        onClick={() => setSendModalOpen(true)}
+                        variant="outline"
+                        size="sm"
+                      >
+                        <Send className="w-4 h-4 mr-2" />
+                        Send
+                      </Button>
+                      <Button 
+                        onClick={() => setReceiveModalOpen(true)}
+                        variant="outline"
+                        size="sm"
+                      >
+                        <Download className="w-4 h-4 mr-2" />
+                        Receive
+                      </Button>
                     </div>
                   </div>
                 </CardContent>
               </Card>
-            ))}
+            ) : (
+              mockTransactions.map((tx, i) => (
+                <Card key={i} className="bg-gradient-card border-border/50 hover:shadow-glow-primary transition-all duration-200">
+                  <CardContent className="p-4">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3 min-w-0 flex-1">
+                        <div className={cn(
+                          'w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center flex-shrink-0',
+                          tx.type === 'send' && 'bg-destructive/10',
+                          tx.type === 'receive' && 'bg-success/10',
+                          tx.type === 'swap' && 'bg-primary/10'
+                        )}>
+                          {tx.type === 'send' && <Send className="w-3 h-3 sm:w-4 sm:h-4 text-destructive" />}
+                          {tx.type === 'receive' && <Download className="w-3 h-3 sm:w-4 sm:h-4 text-success" />}
+                          {tx.type === 'swap' && <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />}
+                        </div>
+                        <div className="min-w-0">
+                          <p className="font-semibold capitalize text-sm sm:text-base truncate">{tx.type} {tx.token}</p>
+                          <p className="text-xs sm:text-sm text-muted-foreground">{tx.time}</p>
+                        </div>
+                      </div>
+                      <div className="text-right flex-shrink-0">
+                        <p className="font-semibold text-sm sm:text-base">
+                          {tx.type === 'send' ? '-' : '+'}{tx.amount} {tx.token}
+                        </p>
+                        <p className="text-xs sm:text-sm text-muted-foreground">${tx.usdValue.toLocaleString()}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))
+            )}
           </TabsContent>
         </Tabs>
       </div>
